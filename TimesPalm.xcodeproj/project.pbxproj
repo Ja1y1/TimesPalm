@@ -52,10 +52,10 @@
 			isa = PBXGroup;
 			children = (
 				69BD28582B332CA30060738C /* TimesPalmApp.swift */,
+				69BD285A2B332CA30060738C /* ContentView.swift */,
 				69BD28662B332DB80060738C /* Model */,
 				69BD28672B332DBC0060738C /* ViewModel */,
 				69BD28682B332DC20060738C /* View */,
-				69BD285A2B332CA30060738C /* ContentView.swift */,
 				69BD285C2B332CA40060738C /* Assets.xcassets */,
 				69BD285E2B332CA40060738C /* Preview Content */,
 			);
