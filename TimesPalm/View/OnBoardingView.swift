@@ -5,108 +5,125 @@
 //  Created by Wajd Alhadlaq on 08/06/1445 AH.
 //
 
-
-
 import SwiftUI
-
-struct OnboardingView: View {
-    @State private var currentPage = 0
-    
-    let onboardingPages = [
-        OnboardingPage(palmImage: "Palmwithdates", basketImage:"", description: "Discover amazing features."),
-        OnboardingPage(palmImage: "Palmwithdates", basketImage:"", description: "Discover amazing features."),
-        OnboardingPage(palmImage: "Palmwithdates", basketImage:"", description: "Discover amazing features."),
-    ]
-
-    var body: some View {
-        VStack {
-            TabView(selection: $currentPage) {
-                ForEach(0..<3) { index in
-                    OnboardingPageView(onboardingPage: onboardingPages[index] )
-                        .tag(index)
-                }
-            }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-
-      
-            }
-        }
-    }
-
 
 struct OnboardingPage: Identifiable {
     var id = UUID()
     let palmImage: String
     let basketImage: String
     let description: String
+    let equation: String
+    let correct: String
 }
 
 struct OnboardingPageView: View {
     let onboardingPage: OnboardingPage
-    
+
     var body: some View {
-        ZStack{
-            Image("OnboardingBG")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-                
-            
-            
-            
-            Image("Basket")
+        ZStack {
+   
+            Image(onboardingPage.basketImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .scaleEffect(0.19)
-                .position(x:300,y:600)
-            
-            
-            
-            Text("سؤال")
-            
-                .font(.system(size: 40))
-                .frame(width: 509,height: 156)
-                .background(.yellow)
+                .position(x:-1000, y:1300)
+                .scaleEffect(0.19) // Move scaleEffect after position
+
+            Text(onboardingPage.description)
+                .font(.system(size:32))
+                .foregroundColor(.oBtext)
+                .frame(width: 500, height: 156)
+                .background(Color.onboarding) // Set the background color here
                 .cornerRadius(20)
-                .position(x:1000,y:250)
-            
+                .position(x: 1000, y: 250)
+
             VStack {
                 
-                Text("2 x 2 =")
-                
-                    .font(.system(size: 64))
-                    .bold()
-                    .frame(width: 401,height: 104)
-                    .background(.cyan)
-                    .cornerRadius(20)
-                
-                Image("palmWithDates")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 500,height: 500)
-                
-                
-                
-                Button("تحقق") {
-                    // Handle button tap action here
+                    Text(onboardingPage.equation)
+                        .font(.system(size: 64))
+                        .bold()
+                        .frame(width: 401, height: 104)
+                        .background(Color.qbkg) // Set the background color here
+                        .cornerRadius(20)
+                ZStack{
+                    Image(onboardingPage.palmImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 500, height: 500)
+                    
+                    
+                    
+                    Image(onboardingPage.correct)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 464, height: 283)
+
+                    
                 }
+                Text("تحقق")
                 .font(.system(size: 40))
-                .padding() // Add padding to the button for better appearance
-                .frame(width: 164,height: 104)
-                .foregroundColor(.white) // Set text color
-                .background(Color.green) // Set button background color
+                .padding()
+                .frame(width: 164, height: 104)
+                .foregroundColor(.white)
+                .background(Color.button)
                 .cornerRadius(20)
-                
-                
-                
             }
             
         }
     }
 }
 
+struct OnboardingView: View {
+    @State var currentPage = 0
+
+    let onboardingPages = [
+        OnboardingPage(palmImage: "Palmwithdates", basketImage: "Basket", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates2", basketImage: "Basket", description: "اجمع حبات التمر في السلة لحل المعادلة والتحقق من الجواب",equation:" 2 x 2 = ?",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates3", basketImage: "Basketwithdates", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "Correct"),
+    ]
+
+    
+    var body: some View {
+        VStack {
+            TabView(selection: $currentPage) {
+                ForEach(0..<3) { index in
+                    OnboardingPageView(onboardingPage: onboardingPages[index])
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            
+            .background(
+                    Image("OnboardingBG")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(width: 1000,height: 1000)
+                        
+                )
+            
+            Button(action: {
+                      withAnimation {
+                          if currentPage < onboardingPages.count - 1 {
+                              currentPage += 1
+                          } else {
+                              // Handle completion or navigate to the main app
+                          }
+                      }
+                  }) {
+                      Text(currentPage < onboardingPages.count - 1 ? "التالي" : "ابدأ اللعب")
+                          .padding()
+                          .background(Color.next)
+                          .foregroundColor(.white)
+                          .cornerRadius(10)
+                  }
+              }
+          }
+      }
+  
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
     }
 }
+
+
