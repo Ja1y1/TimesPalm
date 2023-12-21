@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6CE8012B34642100F214B0 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6CE8002B34642100F214B0 /* OnBoardingView.swift */; };
 		69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD28582B332CA30060738C /* TimesPalmApp.swift */; };
 		69BD285B2B332CA30060738C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD285A2B332CA30060738C /* ContentView.swift */; };
 		69BD285D2B332CA40060738C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD285C2B332CA40060738C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6CE8002B34642100F214B0 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		69BD28552B332CA30060738C /* TimesPalm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimesPalm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD28582B332CA30060738C /* TimesPalmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesPalmApp.swift; sourceTree = "<group>"; };
 		69BD285A2B332CA30060738C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				69BD286B2B3365B60060738C /* SplashView.swift */,
 				69BD286D2B341EAF0060738C /* MapView.swift */,
+				0E6CE8002B34642100F214B0 /* OnBoardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				69BD285B2B332CA30060738C /* ContentView.swift in Sources */,
 				69BD286E2B341EAF0060738C /* MapView.swift in Sources */,
 				69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */,
+				0E6CE8012B34642100F214B0 /* OnBoardingView.swift in Sources */,
 				69BD286C2B3365B60060738C /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimesPalm/Preview Content\"";
-				DEVELOPMENT_TEAM = R8GG63L5X3;
+				DEVELOPMENT_TEAM = HFC8L93DU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -333,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimesPalm/Preview Content\"";
-				DEVELOPMENT_TEAM = R8GG63L5X3;
+				DEVELOPMENT_TEAM = HFC8L93DU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
