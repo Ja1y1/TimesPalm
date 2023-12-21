@@ -11,6 +11,8 @@
 		69BD285B2B332CA30060738C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD285A2B332CA30060738C /* ContentView.swift */; };
 		69BD285D2B332CA40060738C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD285C2B332CA40060738C /* Assets.xcassets */; };
 		69BD28602B332CA40060738C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD285F2B332CA40060738C /* Preview Assets.xcassets */; };
+		69BD286C2B3365B60060738C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD286B2B3365B60060738C /* SplashView.swift */; };
+		69BD286E2B341EAF0060738C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD286D2B341EAF0060738C /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		69BD285A2B332CA30060738C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		69BD285C2B332CA40060738C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69BD285F2B332CA40060738C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		69BD286B2B3365B60060738C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		69BD286D2B341EAF0060738C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		69BD28682B332DC20060738C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				69BD286B2B3365B60060738C /* SplashView.swift */,
+				69BD286D2B341EAF0060738C /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BD285B2B332CA30060738C /* ContentView.swift in Sources */,
+				69BD286E2B341EAF0060738C /* MapView.swift in Sources */,
 				69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */,
+				69BD286C2B3365B60060738C /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
