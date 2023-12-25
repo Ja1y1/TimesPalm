@@ -9,7 +9,8 @@ import SwiftUI
 struct MapView: View {
     var body: some View {
         NavigationView {
-            ZStack {
+            
+            ZStack{
                 Rectangle()
                     .fill(Color.mapcolor)
                     .ignoresSafeArea()
@@ -19,22 +20,30 @@ struct MapView: View {
                     .scaledToFit()
                    // .frame(maxWidth: 987, maxHeight: 651) // Set the maximum width and height
                 
-                NavigationLink(destination: ContentView()) {
+               
                     Image("3")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 280)
-                        .position(x: 385, y: 580)
-                }
+                        .position(x: 345, y: 595)
                 
-                NavigationLink(destination: CorrectAnswer_()) {
-                    Image("2")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200)
-                        .position(x: 600, y: 490)
+                ZStack {
+                 
+                    
+                    NavigationLink(destination: CorrectAnswer_()){
+                        
+                                
+                                Image("2")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200)
+                                    .position(x: 600, y: 500)
+                            }
+                  
                 }
             }
+     
+            
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Add this line to use compact navigation view style
     }
