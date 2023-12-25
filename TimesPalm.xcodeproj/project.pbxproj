@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3772C32B3866A80038D0BD /* CorrectAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3772C22B3866A80038D0BD /* CorrectAnswer.swift */; };
 		0E6CE8012B34642100F214B0 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6CE8002B34642100F214B0 /* OnBoardingView.swift */; };
 		69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD28582B332CA30060738C /* TimesPalmApp.swift */; };
 		69BD285B2B332CA30060738C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD285A2B332CA30060738C /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E3772C22B3866A80038D0BD /* CorrectAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswer.swift; sourceTree = "<group>"; };
 		0E6CE8002B34642100F214B0 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		69BD28552B332CA30060738C /* TimesPalm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimesPalm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD28582B332CA30060738C /* TimesPalmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesPalmApp.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				69BD286B2B3365B60060738C /* SplashView.swift */,
 				69BD286D2B341EAF0060738C /* MapView.swift */,
 				0E6CE8002B34642100F214B0 /* OnBoardingView.swift */,
+				0E3772C22B3866A80038D0BD /* CorrectAnswer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			files = (
 				69BD285B2B332CA30060738C /* ContentView.swift in Sources */,
 				69BD286E2B341EAF0060738C /* MapView.swift in Sources */,
+				0E3772C32B3866A80038D0BD /* CorrectAnswer.swift in Sources */,
 				69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */,
 				0E6CE8012B34642100F214B0 /* OnBoardingView.swift in Sources */,
 				69BD286C2B3365B60060738C /* SplashView.swift in Sources */,
