@@ -119,12 +119,13 @@ struct OnboardingView: View {
                     
                 )
                 
-                Spacer()
+               
                 
                 
                 HStack {
                     
-                    Spacer()
+                
+                    
                     Button(action: {
                         withAnimation {
                             if currentPage < onboardingPages.count - 1 {
@@ -143,8 +144,32 @@ struct OnboardingView: View {
                              .fill(Color.next)
                             )
                                }
-                    .padding(.trailing,960)
-                    .padding(.bottom,10)
+                    .padding(.horizontal,40)
+        
+                    
+                    
+                    Spacer()
+                    
+                    
+                    Button(action: {
+                        withAnimation {
+                            if currentPage < onboardingPages.count - 1 {
+                                currentPage = onboardingPages.count - 1
+                            } else {
+                                // Handle completion or navigate to the main app
+                            }
+                        }
+                    }) {
+                        Text("تخطي")
+                            .frame(width:180, height:50)
+                            .foregroundColor(.black)
+                            .font(.system(size:30))
+                            .background(
+                             RoundedRectangle(cornerRadius: 10)
+                             .fill(Color.yellow)
+                            )
+                               }
+                    .padding(.horizontal,40)
                            }
                     
                        }
