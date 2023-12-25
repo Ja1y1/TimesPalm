@@ -75,7 +75,9 @@ struct OnboardingPageView: View {
                 .background(Color.button)
                 .cornerRadius(20)
                
-            }
+            }.accessibilityLabel(Text("تحقق"))
+                .accessibilityHint(Text("press this button to check your answer"))
+                
             
         }
         
@@ -143,7 +145,9 @@ struct OnboardingView: View {
                                             .fill(Color.next)
                                     )
                             }
-                        }
+                                
+                        }.accessibilityLabel( Text("التالي"))
+                            .accessibilityHint(Text("Next"))
                         
                         
                         if currentPage == onboardingPages.count - 1 {
@@ -159,12 +163,13 @@ struct OnboardingView: View {
                                 }
                                 .padding(.horizontal,20)
                         }
-                         
                            
                         
                         Spacer()
                         
-                        
+                            .accessibilityLabel( Text("ابدا اللعب"))
+                                .accessibilityHint(Text("start playing"))
+                             
                         Button(action: {
                             withAnimation {
                                 if currentPage < onboardingPages.count - 1 {
@@ -183,6 +188,9 @@ struct OnboardingView: View {
                                         .fill(Color.yellow)
                                 )
                         }
+                        .accessibilityLabel( Text("تخطي"))
+                            .accessibilityHint(Text("skip"))
+                         
                         .padding(.horizontal,40)
                     }
                     

@@ -163,7 +163,8 @@ struct CorrectAnswer_: View {
                         .cornerRadius(10)
                     
                 }
-                
+                .accessibilityLabel(Text("تحقق"))
+                .accessibilityHint(Text("press this button to check your answer"))
                 
                 
                 if isShowingPopup {
@@ -232,7 +233,9 @@ struct CorrectAnswer_: View {
                         .padding()
                     
                     Spacer()
-                }
+                }.accessibilityLabel(Text("اجابة صحيحة! "))
+                    .accessibilityHint(Text("right answer"))
+                
                 .frame(width: 300, height: 200)
                 .background(Color.answer)
                 .cornerRadius(20)
@@ -275,7 +278,11 @@ struct CorrectAnswer_: View {
                 }
                 
                 // Spacer()
-            }
+            } .accessibilityLabel(Text("اجابة خاطئة"))
+                .accessibilityHint(Text("wrong answer"))
+                .accessibilityLabel(Text("حاول مرة اخرى"))
+                .accessibilityHint(Text("try again"))
+            
             .frame(width: 400, height: 250)
             .background(Color.false)
             .cornerRadius(20)
@@ -285,6 +292,7 @@ struct CorrectAnswer_: View {
                     isShowingPopupFalse = false
                 }
             }
+           
         }
     }
     
@@ -312,7 +320,10 @@ struct CorrectAnswer_: View {
                 
                 
                 Spacer()
-            }
+            } .accessibilityLabel(Text("احسنت"))
+                .accessibilityHint(Text("good job"))
+                .accessibilityLabel(  Text("انهيت الجدول كاملا"))
+                .accessibilityHint(Text("you finished the whole table"))
             
             .frame(width: 464, height: 395)
             .background(Color.blue)
