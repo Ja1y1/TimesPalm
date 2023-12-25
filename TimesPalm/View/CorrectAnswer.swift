@@ -110,6 +110,7 @@ struct CorrectAnswer_: View {
                         
                         
                     )
+                    .padding(.top,40)
                 
                 
                 
@@ -152,7 +153,9 @@ struct CorrectAnswer_: View {
                     
                     Text("تحقق")
                     
-                        .font(.title)
+                        .font(.system(size: 40))
+                    
+                        .frame(width: 150)
                     
                         .foregroundColor(.white)
                     
@@ -160,7 +163,9 @@ struct CorrectAnswer_: View {
                     
                         .background(Color.button)
                     
-                        .cornerRadius(10)
+                        .cornerRadius(20)
+                    
+                        .padding(.bottom,30)
                     
                 }
                 .accessibilityLabel(Text("تحقق"))
@@ -168,12 +173,18 @@ struct CorrectAnswer_: View {
                 
                 
                 if isShowingPopup {
-                    CustomPopups(isShowingPopup: $isShowingPopup, duration: 2.0)
+                    CustomPopups(isShowingPopup: $isShowingPopup, duration: 2)
                         .zIndex(1)
                 }
                 
                 if isShowingPopupFalse {
-                    CustomPopupTwo2(isShowingPopupFalse: $isShowingPopupFalse, duration: 2.0)
+                    CustomPopupTwo2(isShowingPopupFalse: $isShowingPopupFalse, duration: 2)
+                        .zIndex(1)
+                }
+                
+                
+                if isShowingPopupFinal {
+                    CustomPopupFinal(isShowingPopupFinal: $isShowingPopupFinal, duration: 2.0)
                         .zIndex(1)
                 }
                 
@@ -186,7 +197,7 @@ struct CorrectAnswer_: View {
     }
     func checkAnswer(_ clickedDatesCount: Int) {
         if clickedDatesCount == correctAnswer {
-             isShowingPopup = true
+            isShowingPopup = true
              generateQuestions()
             self.clickedDatesCount = 0
 
@@ -198,6 +209,7 @@ struct CorrectAnswer_: View {
 
          if questionNumber >= 10 {
              isShowingPopupFinal = true
+             questionNumber = 1
          } else {
              // Increment questionNumber only if the answer is correct
              questionNumber += 1
@@ -217,6 +229,7 @@ struct CorrectAnswer_: View {
     
     
     struct CustomPopups: View {
+        
         @Binding var isShowingPopup: Bool
         var duration: TimeInterval
     
@@ -226,20 +239,31 @@ struct CorrectAnswer_: View {
                 VStack {
                     Spacer()
                     
+                    VStack{
                     
-                    Text("اجابة صحيحة! ")
-                        .font(.title)
-                        .foregroundColor(.black)
-                        .padding()
-                    
+                        
+                        
+                        Text("اجابة صحيحة! ")
+                            .font(.system(size: 40))
+                            .foregroundColor(.black)
+                            .padding()
+                        
+                        
+                        Image(systemName: "checkmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/,height: 100)
+                            .foregroundColor(.button)
+                        
+                    }
                     Spacer()
                 }.accessibilityLabel(Text("اجابة صحيحة! "))
                     .accessibilityHint(Text("right answer"))
                 
-                .frame(width: 300, height: 200)
+                .frame(width: 464, height: 283)
                 .background(Color.answer)
                 .cornerRadius(20)
-                .padding(.top, -400)
+                .padding(.top, -550)
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -258,11 +282,13 @@ struct CorrectAnswer_: View {
             VStack {
                 Spacer()
                 
-                Text("اجابة خاطئة")
-                    .font(.title)
+                Text("إجابة خاطئة")
                     .padding()
+                    .font(.system(size: 40))
+                   
                 Text("حاول مرة اخرى")
-                    .font(.title)
+                
+                    .font(.system(size: 40))
                     .foregroundColor(.black)
                 //  .padding()
                 
@@ -272,7 +298,7 @@ struct CorrectAnswer_: View {
                     Image("replay")
                         .font(.title)
                         .foregroundColor(.white)
-                        .padding()
+                        .padding(.bottom,20)
                     
                         .cornerRadius(10)
                 }
@@ -283,10 +309,10 @@ struct CorrectAnswer_: View {
                 .accessibilityLabel(Text("حاول مرة اخرى"))
                 .accessibilityHint(Text("try again"))
             
-            .frame(width: 400, height: 250)
+            .frame(width: 464, height: 283)
             .background(Color.false)
             .cornerRadius(20)
-            .padding(.top,-400)
+            .padding(.top,-550)
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     isShowingPopupFalse = false
@@ -326,12 +352,12 @@ struct CorrectAnswer_: View {
                 .accessibilityHint(Text("you finished the whole table"))
             
             .frame(width: 464, height: 395)
-            .background(Color.blue)
+            .background(Color.qbkg)
             .cornerRadius(20)
-            .padding(.top,-400)
+            .padding(.top,-550)
             
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     isShowingPopupFinal = false
                 }
             }

@@ -70,7 +70,7 @@ struct OnboardingPageView: View {
                 Text("تحقق")
                 .font(.system(size: 40))
                 .padding()
-                .frame(width: 164, height:104)
+                .frame(width: 150)
                 .foregroundColor(.white)
                 .background(Color.button)
                 .cornerRadius(20)
@@ -89,6 +89,7 @@ struct OnboardingPageView: View {
 
 struct OnboardingView: View {
     @State var currentPage = 0
+    @State var goToMapView = false
     
     let onboardingPages = [
         OnboardingPage(palmImage: "Palmwithdates", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
@@ -98,7 +99,7 @@ struct OnboardingView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 VStack {
                     TabView(selection: $currentPage) {
@@ -124,45 +125,40 @@ struct OnboardingView: View {
                     
                     
                     
-                    
                     HStack {
-                        Button(action: {
-                            withAnimation {
-                                if currentPage < onboardingPages.count - 1 {
-                                    currentPage += 1
-                                } else {
-                                    // Handle completion or navigate to the main app
-                                }
-                            }
-                        }) {
-                            if currentPage < onboardingPages.count - 1{
-                                Text("التالي")
-                                    .frame(width:180, height:50)
-                                    .foregroundColor(.white)
-                                    .font(.system(size:30))
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .fill(Color.next)
-                                    )
-                            }
-                                
-                        }.accessibilityLabel( Text("التالي"))
-                            .accessibilityHint(Text("Next"))
-                        
-                        
-                        if currentPage == onboardingPages.count - 1 {
-                                NavigationLink(destination: MapView()) {
-                                    Text("ابدأ اللعب")
-                                        .frame(width: 180, height: 50)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 30))
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .fill(Color.next)
-                                        )
-                                }
-                                .padding(.horizontal,20)
-                        }
+                                           if currentPage < onboardingPages.count - 1 {
+                                               Button(action: {
+                                                   withAnimation {
+                                                       currentPage += 1
+                                                   }
+                                               }) {
+                                                   Text("التالي")
+                                                       .frame(width: 180, height: 50)
+                                                       .foregroundColor(.white)
+                                                       .font(.system(size: 30))
+                                                       .background(
+                                                           RoundedRectangle(cornerRadius: 10)
+                                                               .fill(Color.next)
+                                                       )
+                                               }.padding(.horizontal,40)
+                                           } else {
+                                               NavigationLink(destination: MapView()){
+                                                   Text("ابدأ اللعب")
+                                                       .frame(width: 180, height: 50)
+                                                       .foregroundColor(.white)
+                                                       .font(.system(size: 30))
+                                                       .background(
+                                                           RoundedRectangle(cornerRadius: 10)
+                                                               .fill(Color.next)
+                                                       )
+                                                       .padding(.horizontal,40)
+                                                       .navigationDestination(isPresented: $goToMapView) {
+                                                           MapView()
+                                                       }
+                                               }
+                                           }
+                                           
+                                           
                            
                         
                         Spacer()
@@ -175,7 +171,7 @@ struct OnboardingView: View {
                                 if currentPage < onboardingPages.count - 1 {
                                     currentPage = onboardingPages.count - 1
                                 } else {
-                                    // Handle completion or navigate to the main app
+                                    goToMapView = true
                                 }
                             }
                         }) {

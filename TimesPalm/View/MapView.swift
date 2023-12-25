@@ -21,7 +21,7 @@ struct MapView: View {
                    // .frame(maxWidth: 987, maxHeight: 651) // Set the maximum width and height
                 
                
-                    Image("3")
+                    Image("1")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 280)
