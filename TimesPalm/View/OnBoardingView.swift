@@ -18,20 +18,11 @@ struct OnboardingPage: Identifiable {
 struct OnboardingPageView: View {
     let onboardingPage: OnboardingPage
 
+    
     var body: some View {
         ZStack {
    
-
-           /* Text(onboardingPage.description)
-                .padding()
-                .font(.system(size:32))
-                .foregroundColor(.oBtext)
-                .frame(width: 500, height: 156)
-                .background(Color.onboarding) // Set the background color here
-                .cornerRadius(20)
-                .position(x: 950, y: 250)
-                .multilineTextAlignment(.center)
-             */
+          
 
             VStack {
                 
@@ -41,19 +32,27 @@ struct OnboardingPageView: View {
                         .frame(width: 401, height: 104)
                         .background(Color.qbkg) // Set the background color here
                         .cornerRadius(20)
+               
+                
                 ZStack{
                     Image(onboardingPage.palmImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 500, height: 500)
                 
-                    
-                    Image(onboardingPage.correct)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 464, height: 283)
-                    
-                    
+                    if !onboardingPage.correct.isEmpty {
+                                           Text(onboardingPage.correct)
+                                               .font(.system(size: 40))
+                                               .foregroundColor(.black)
+                                               .frame(width: 464, height: 283)
+                                               .background(Color.answer)
+                                               .cornerRadius(20)
+                                               .multilineTextAlignment(.center)
+                                               .offset(y: onboardingPage.correct.isEmpty ? -500 : 0) // Move offscreen if empty
+                                               .opacity(onboardingPage.correct.isEmpty ? 0 : 1) // Hide if empty
+                        }
+                                       
+                       
                     Text(onboardingPage.description)
                         .padding()
                         .font(.system(size:32))
@@ -63,9 +62,11 @@ struct OnboardingPageView: View {
                         .cornerRadius(20)
                         .position(x: 900, y: 80)
                         .multilineTextAlignment(.center)
+                       
 
                     
                 }
+                
                 Text("تحقق")
                 .font(.system(size: 40))
                 .padding()
@@ -73,11 +74,16 @@ struct OnboardingPageView: View {
                 .foregroundColor(.white)
                 .background(Color.button)
                 .cornerRadius(20)
+               
             }
             
         }
+        
+      
     }
 }
+
+
 
 struct OnboardingView: View {
     @State var currentPage = 0
@@ -85,91 +91,105 @@ struct OnboardingView: View {
     let onboardingPages = [
         OnboardingPage(palmImage: "Palmwithdates", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
         OnboardingPage(palmImage: "Palmwithdates3", description: "اجمع حبات التمر عبر الضغط عليها لحل المعادلة والتحقق من الجواب",equation:" 2 x 2 = 3",correct: ""),
-        OnboardingPage(palmImage: "Palmwithdates3", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "Correct"),
+        OnboardingPage(palmImage: "Palmwithdates3", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "إجابة صحيحة!"),
     ]
     
     
     var body: some View {
-        
-        ZStack{
-            VStack {
-                TabView(selection: $currentPage) {
-                    ForEach((0..<onboardingPages.count).reversed(), id: \.self) { index in
-                        OnboardingPageView(onboardingPage: onboardingPages[index])
-                            .tag(index)
+        NavigationView {
+            ZStack{
+                VStack {
+                    TabView(selection: $currentPage) {
+                        ForEach((0..<onboardingPages.count).reversed(), id: \.self) { index in
+                            OnboardingPageView(onboardingPage: onboardingPages[index])
+                                .tag(index)
+                            
+                        }
                     }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                    
+                    
+                    
+                    
+                    .background(
+                        Image("OnboardingBG")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(width: 1000,height: 1000)
+                        
+                    )
+                    
+                    
+                    
+                    
+                    HStack {
+                        Button(action: {
+                            withAnimation {
+                                if currentPage < onboardingPages.count - 1 {
+                                    currentPage += 1
+                                } else {
+                                    // Handle completion or navigate to the main app
+                                }
+                            }
+                        }) {
+                            if currentPage < onboardingPages.count - 1{
+                                Text("التالي")
+                                    .frame(width:180, height:50)
+                                    .foregroundColor(.white)
+                                    .font(.system(size:30))
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color.next)
+                                    )
+                            }
+                        }
+                        
+                        
+                        if currentPage == onboardingPages.count - 1 {
+                                NavigationLink(destination: MapView()) {
+                                    Text("ابدأ اللعب")
+                                        .frame(width: 180, height: 50)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 30))
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color.next)
+                                        )
+                                }
+                                .padding(.horizontal,20)
+                        }
+                         
+                           
+                        
+                        Spacer()
+                        
+                        
+                        Button(action: {
+                            withAnimation {
+                                if currentPage < onboardingPages.count - 1 {
+                                    currentPage = onboardingPages.count - 1
+                                } else {
+                                    // Handle completion or navigate to the main app
+                                }
+                            }
+                        }) {
+                            Text("تخطي")
+                                .frame(width:180, height:50)
+                                .foregroundColor(.black)
+                                .font(.system(size:30))
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color.yellow)
+                                )
+                        }
+                        .padding(.horizontal,40)
+                    }
+                    
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                
-                
-                
-                
-                .background(
-                    Image("OnboardingBG")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: 1000,height: 1000)
-                    
-                )
-                
-               
-                
-                
-                HStack {
-                    
-                
-                    
-                    Button(action: {
-                        withAnimation {
-                            if currentPage < onboardingPages.count - 1 {
-                                currentPage += 1
-                            } else {
-                                // Handle completion or navigate to the main app
-                            }
-                        }
-                    }) {
-                        Text(currentPage < onboardingPages.count - 1 ? "التالي" : "ابدأ اللعب")
-                            .frame(width:180, height:50)
-                            .foregroundColor(.white)
-                            .font(.system(size:30))
-                            .background(
-                             RoundedRectangle(cornerRadius: 10)
-                             .fill(Color.next)
-                            )
-                               }
-                    .padding(.horizontal,40)
-        
-                    
-                    
-                    Spacer()
-                    
-                    
-                    Button(action: {
-                        withAnimation {
-                            if currentPage < onboardingPages.count - 1 {
-                                currentPage = onboardingPages.count - 1
-                            } else {
-                                // Handle completion or navigate to the main app
-                            }
-                        }
-                    }) {
-                        Text("تخطي")
-                            .frame(width:180, height:50)
-                            .foregroundColor(.black)
-                            .font(.system(size:30))
-                            .background(
-                             RoundedRectangle(cornerRadius: 10)
-                             .fill(Color.yellow)
-                            )
-                               }
-                    .padding(.horizontal,40)
-                           }
-                    
-                       }
-             
             }
-            
+            }
+        .navigationViewStyle(StackNavigationViewStyle())
         }
     }
     
