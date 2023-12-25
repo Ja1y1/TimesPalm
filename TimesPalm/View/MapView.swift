@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-
 struct MapView: View {
-   
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
-                
                 Rectangle()
                     .fill(Color.mapcolor)
                     .ignoresSafeArea()
@@ -20,36 +17,27 @@ struct MapView: View {
                 Image("Map")
                     .resizable()
                     .scaledToFit()
-                    .frame(width:987, height:651)
+                   // .frame(maxWidth: 987, maxHeight: 651) // Set the maximum width and height
                 
-                NavigationLink(destination: ContentView()){
-                    ZStack {
-                        
-                        
-                        Image("3")
-                            .resizable()
-                            .scaledToFit()
-                    } .frame(width: 280)
+                NavigationLink(destination: ContentView()) {
+                    Image("3")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 280)
                         .position(x: 385, y: 580)
-                    
-                   
-                    }
-                NavigationLink(destination: ContentView()){
-                    ZStack {
-                        
-                        
-                        Image("2")
-                            .resizable()
-                            .scaledToFit()
-                    }   .frame(width: 200)
+                }
+                
+                NavigationLink(destination: CorrectAnswer_()) {
+                    Image("2")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
                         .position(x: 600, y: 490)
-                    
                 }
             }
-        
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Add this line to use compact navigation view style
     }
-
 }
 #Preview {
     MapView()

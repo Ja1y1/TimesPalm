@@ -85,23 +85,7 @@ struct CorrectAnswer_: View {
                 .ignoresSafeArea()
             
             
-            
-          /*  HStack{
-                
-                
-               /*
-                Image("Basket")
-                
-                    .resizable()
-                
-                    .aspectRatio(contentMode: .fit)
-                
-                    .position(x:-1000, y:1300)
-                
-                    .scaleEffect(0.19)
-                */
-            }*/
-            
+       
             VStack{
                 
                 //.scaledToFit()
@@ -123,6 +107,7 @@ struct CorrectAnswer_: View {
                             .font(.system(size: 64))
                         
                             .foregroundColor(.black)
+                        
                         
                     )
                 
@@ -149,6 +134,7 @@ struct CorrectAnswer_: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 70, height: 70)
+                                   
                                 // Adjust the size as needed
                                 //.accessibilityLabel("Date \(date)")
                                 // .accessibility(addTraits: .isButton)
@@ -231,15 +217,16 @@ struct CorrectAnswer_: View {
     
     struct CustomPopups: View {
         @Binding var isShowingPopup: Bool
-        
         var duration: TimeInterval
+    
         
         var body: some View {
             ZStack {
                 VStack {
                     Spacer()
                     
-                    Text("اجابة صحيحة!")
+                    
+                    Text("اجابة صحيحة! ")
                         .font(.title)
                         .foregroundColor(.black)
                         .padding()
@@ -247,7 +234,7 @@ struct CorrectAnswer_: View {
                     Spacer()
                 }
                 .frame(width: 300, height: 200)
-                .background(Color.red)
+                .background(Color.answer)
                 .cornerRadius(20)
                 .padding(.top, -400)
             }
@@ -290,7 +277,7 @@ struct CorrectAnswer_: View {
                 // Spacer()
             }
             .frame(width: 400, height: 250)
-            .background(Color.red)
+            .background(Color.false)
             .cornerRadius(20)
             .padding(.top,-400)
             .onAppear {
