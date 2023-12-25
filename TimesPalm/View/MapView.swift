@@ -8,36 +8,49 @@
 import SwiftUI
 
 struct MapView: View {
+   
     var body: some View {
-        ZStack {
-
-            Rectangle()
-                .fill(Color.mapcolor)
-                .ignoresSafeArea()
-            
-            Image("Map")
-                .resizable()
-                .scaledToFit()
-                .frame(width:987, height:651)
-//          Image("2")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-//            
-//            Image("3")
-//                  .resizable()
-//                  .scaledToFit()
-//                  .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-//             
-//           
-            
-            
-           
+        NavigationView{
+            ZStack {
+                
+                Rectangle()
+                    .fill(Color.mapcolor)
+                    .ignoresSafeArea()
+                
+                Image("Map")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width:987, height:651)
+                
+                NavigationLink(destination: ContentView()){
+                    ZStack {
+                        
+                        
+                        Image("3")
+                            .resizable()
+                            .scaledToFit()
+                    } .frame(width: 280)
+                        .position(x: 385, y: 580)
+                    
+                   
+                    }
+                NavigationLink(destination: ContentView()){
+                    ZStack {
+                        
+                        
+                        Image("2")
+                            .resizable()
+                            .scaledToFit()
+                    }   .frame(width: 200)
+                        .position(x: 600, y: 490)
+                    
+                }
+            }
+        
         }
-       
     }
-}
 
+}
 #Preview {
     MapView()
 }
