@@ -10,7 +10,6 @@ import SwiftUI
 struct OnboardingPage: Identifiable {
     var id = UUID()
     let palmImage: String
-    let basketImage: String
     let description: String
     let equation: String
     let correct: String
@@ -22,11 +21,6 @@ struct OnboardingPageView: View {
     var body: some View {
         ZStack {
    
-            Image(onboardingPage.basketImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .position(x:-1000, y:1300)
-                .scaleEffect(0.19) // Move scaleEffect after position
 
            /* Text(onboardingPage.description)
                 .padding()
@@ -89,9 +83,9 @@ struct OnboardingView: View {
     @State var currentPage = 0
     
     let onboardingPages = [
-        OnboardingPage(palmImage: "Palmwithdates", basketImage: "Basket", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
-        OnboardingPage(palmImage: "Palmwithdates2", basketImage: "Basket", description: "اجمع حبات التمر في السلة لحل المعادلة والتحقق من الجواب",equation:" 2 x 2 = ?",correct: ""),
-        OnboardingPage(palmImage: "Palmwithdates3", basketImage: "Basketwithdates", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "Correct"),
+        OnboardingPage(palmImage: "Palmwithdates", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates3", description: "اجمع حبات التمر عبر الضغط عليها لحل المعادلة والتحقق من الجواب",equation:" 2 x 2 = 3",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates3", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "Correct"),
     ]
     
     
