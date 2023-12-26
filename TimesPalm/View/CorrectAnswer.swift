@@ -185,8 +185,15 @@ struct CorrectAnswer_: View {
                 
                 
                 if isShowingPopupFinal {
+                  
                     CustomPopupFinal(isShowingPopupFinal: $isShowingPopupFinal, duration: 2.0)
+                    
                         .zIndex(1)
+                    
+                        .onDisappear {
+                            resetGame()
+                                }
+                    
                 }
                 
                 Text(message)
@@ -208,7 +215,7 @@ struct CorrectAnswer_: View {
              isDateClicked = Array(repeating: false, count: 20)
          }
 
-         if questionNumber >= 11 {
+         if questionNumber == 10 {
              isShowingPopupFinal = true
          } else {
              // Increment questionNumber only if the answer is correct
@@ -224,7 +231,13 @@ struct CorrectAnswer_: View {
     
     
     
-    
+    func resetGame() {
+        questionNumber = 1
+        clickedDatesCount = 0
+        isDateClicked = Array(repeating: false, count: 20)
+        generateQuestions()
+    }
+
     
     
     
@@ -317,6 +330,7 @@ struct CorrectAnswer_: View {
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     isShowingPopupFalse = false
+                    
                 }
             }
            
@@ -361,6 +375,7 @@ struct CorrectAnswer_: View {
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     isShowingPopupFinal = false
+                    
                 }
             }
         }
