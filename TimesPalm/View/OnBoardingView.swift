@@ -175,15 +175,18 @@ struct OnboardingView: View {
                                 }
                             }
                         }) {
-                            Text("تخطي")
-                                .frame(width:180, height:50)
-                                .foregroundColor(.black)
-                                .font(.system(size:30))
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.yellow)
-                                )
-                        }
+                            NavigationLink(destination: MapView()){
+                                Text("تخطي")
+                                    .frame(width:180, height:50)
+                                    .foregroundColor(.black)
+                                    .font(.system(size:30))
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color.yellow)
+                                    )
+                            }
+                            }
+                           
                         .accessibilityLabel( Text("تخطي"))
                             .accessibilityHint(Text("skip"))
                          
