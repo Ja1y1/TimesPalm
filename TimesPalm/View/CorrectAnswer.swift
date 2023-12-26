@@ -204,18 +204,18 @@ struct CorrectAnswer_: View {
         }
     }
     func checkAnswer(_ clickedDatesCount: Int) {
-        if clickedDatesCount == correctAnswer {
+        if (clickedDatesCount == correctAnswer && questionNumber < 11) {
             isShowingPopup = true
              generateQuestions()
             self.clickedDatesCount = 0
 
-         } else {
+         } else if (clickedDatesCount != correctAnswer && questionNumber < 11) {
              isShowingPopupFalse = true
              self.clickedDatesCount = 0
              isDateClicked = Array(repeating: false, count: 20)
          }
 
-         if questionNumber == 10 {
+         if (questionNumber >= 11) {
              isShowingPopupFinal = true
          } else {
              // Increment questionNumber only if the answer is correct
