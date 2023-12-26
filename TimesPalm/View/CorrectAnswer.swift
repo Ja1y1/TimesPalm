@@ -306,6 +306,7 @@ struct CorrectAnswer_: View {
                 // Spacer()
             } .accessibilityLabel(Text("اجابة خاطئة"))
                 .accessibilityHint(Text("wrong answer"))
+            
                 .accessibilityLabel(Text("حاول مرة اخرى"))
                 .accessibilityHint(Text("try again"))
             
@@ -348,6 +349,7 @@ struct CorrectAnswer_: View {
                 Spacer()
             } .accessibilityLabel(Text("احسنت"))
                 .accessibilityHint(Text("good job"))
+            
                 .accessibilityLabel(  Text("انهيت الجدول كاملا"))
                 .accessibilityHint(Text("you finished the whole table"))
             
