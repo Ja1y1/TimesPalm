@@ -12,7 +12,9 @@ struct SplashView: View {
     var body: some View {
         ZStack{
             if self.isActive{
+
                OnboardingView()
+
             }
                 else{
                 Rectangle()
@@ -46,5 +48,6 @@ struct SplashView: View {
 }
 
 #Preview {
-    SplashView()
+            SplashView()
+       
 }

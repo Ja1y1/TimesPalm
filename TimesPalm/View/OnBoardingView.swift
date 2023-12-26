@@ -32,6 +32,7 @@ struct OnboardingPageView: View {
                         .frame(width: 401, height: 104)
                         .background(Color.qbkg) // Set the background color here
                         .cornerRadius(20)
+                        .accessibilityLabel( Text("مسألة الضرب"))
                
                 
                 ZStack{
@@ -49,7 +50,8 @@ struct OnboardingPageView: View {
                                                .cornerRadius(20)
                                                .multilineTextAlignment(.center)
                                                .offset(y: onboardingPage.correct.isEmpty ? -500 : 0) // Move offscreen if empty
-                                               .opacity(onboardingPage.correct.isEmpty ? 0 : 1) // Hide if empty
+                                               .opacity(onboardingPage.correct.isEmpty ? 0 : 1)
+                                               .accessibilityLabel( Text("إجابة صحيحة"))// Hide if empty
                         }
                                        
                        
@@ -62,6 +64,7 @@ struct OnboardingPageView: View {
                         .cornerRadius(20)
                         .position(x: 900, y: 80)
                         .multilineTextAlignment(.center)
+                        .accessibilityLabel(Text(onboardingPage.description))
                        
 
                     

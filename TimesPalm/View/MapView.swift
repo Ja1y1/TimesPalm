@@ -26,6 +26,7 @@ struct MapView: View {
                         .scaledToFit()
                         .frame(width: 280)
                         .position(x: 345, y: 595)
+                        .accessibilityLabel(Text("جدول ضرب واحد"))
                 
                 ZStack {
                  
@@ -38,6 +39,7 @@ struct MapView: View {
                                     .scaledToFit()
                                     .frame(width: 200)
                                     .position(x: 600, y: 500)
+                                    .accessibilityLabel(Text("جدول ضرب اثنان"))
                             }
                   
                 }

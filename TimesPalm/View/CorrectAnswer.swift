@@ -111,6 +111,7 @@ struct CorrectAnswer_: View {
                         
                     )
                     .padding(.top,40)
+                    .accessibilityLabel(Text("2 x \(secondNumber) = \(clickedDatesCount)"))
                 
                 
                 
@@ -207,9 +208,8 @@ struct CorrectAnswer_: View {
              isDateClicked = Array(repeating: false, count: 20)
          }
 
-         if questionNumber >= 10 {
+         if questionNumber >= 11 {
              isShowingPopupFinal = true
-             questionNumber = 1
          } else {
              // Increment questionNumber only if the answer is correct
              questionNumber += 1
