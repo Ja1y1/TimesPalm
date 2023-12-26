@@ -12,7 +12,7 @@ struct SplashView: View {
     var body: some View {
         ZStack{
             if self.isActive{
-                //MapView()
+               OnboardingView()
             }
                 else{
                 Rectangle()
