@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E3772C32B3866A80038D0BD /* CorrectAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3772C22B3866A80038D0BD /* CorrectAnswer.swift */; };
 		0E6CE8012B34642100F214B0 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6CE8002B34642100F214B0 /* OnBoardingView.swift */; };
+		690F17C82B3C5BDF00599D64 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 690F17C72B3C5BDF00599D64 /* Localizable.xcstrings */; };
 		69BD28592B332CA30060738C /* TimesPalmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD28582B332CA30060738C /* TimesPalmApp.swift */; };
 		69BD285B2B332CA30060738C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD285A2B332CA30060738C /* ContentView.swift */; };
 		69BD285D2B332CA40060738C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD285C2B332CA40060738C /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0E3772C22B3866A80038D0BD /* CorrectAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswer.swift; sourceTree = "<group>"; };
 		0E6CE8002B34642100F214B0 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		690F17C72B3C5BDF00599D64 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		69BD28552B332CA30060738C /* TimesPalm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimesPalm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD28582B332CA30060738C /* TimesPalmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesPalmApp.swift; sourceTree = "<group>"; };
 		69BD285A2B332CA30060738C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		69BD284C2B332CA30060738C = {
 			isa = PBXGroup;
 			children = (
+				690F17C72B3C5BDF00599D64 /* Localizable.xcstrings */,
 				69BD28572B332CA30060738C /* TimesPalm */,
 				69BD28562B332CA30060738C /* Products */,
 			);
@@ -145,6 +148,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 69BD284C2B332CA30060738C;
 			productRefGroup = 69BD28562B332CA30060738C /* Products */;
@@ -163,6 +167,7 @@
 			files = (
 				69BD28602B332CA40060738C /* Preview Assets.xcassets in Resources */,
 				69BD285D2B332CA40060738C /* Assets.xcassets in Resources */,
+				690F17C82B3C5BDF00599D64 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +243,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,7 +300,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -313,7 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimesPalm/Preview Content\"";
-				DEVELOPMENT_TEAM = HFC8L93DU2;
+				DEVELOPMENT_TEAM = R8GG63L5X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimesPalm/Preview Content\"";
-				DEVELOPMENT_TEAM = HFC8L93DU2;
+				DEVELOPMENT_TEAM = R8GG63L5X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

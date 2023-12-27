@@ -1,0 +1,260 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "2 x %lld = %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2 x %1$lld = %2$lld"
+          }
+        }
+      }
+    },
+    "Check" : {
+
+    },
+    "Collect the dates by clicking on them and then checking your answer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجمع حبات التمر عبر الضغط عليها لحل المعادلة والتحقق من الجواب"
+          }
+        }
+      }
+    },
+    "Correct answer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجابة صحيحة"
+          }
+        }
+      }
+    },
+    "Correct Answer" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجابة صحيحة"
+          }
+        }
+      }
+    },
+    "good job" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "احسنت"
+          }
+        }
+      }
+    },
+    "Good job!" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "احسنت!"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+
+    },
+    "Next" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التالي"
+          }
+        }
+      }
+    },
+    "press this button to check your answer" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط هنا لتتحقق من اجابتك"
+          }
+        }
+      }
+    },
+    "Question from the chosen table" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سؤال من جدول الضرب المراد حله"
+          }
+        }
+      }
+    },
+    "right answer" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجابة صحيحة"
+          }
+        }
+      }
+    },
+    "skip" : {
+
+    },
+    "Skip" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخطي"
+          }
+        }
+      }
+    },
+    "start playing" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ابدا اللعب"
+          }
+        }
+      }
+    },
+    "Start playing" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ابدا اللعب"
+          }
+        }
+      }
+    },
+    "The correct answer appears after pressing check" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ظهور الحل والإجابة الصحيحة بعد التحقق"
+          }
+        }
+      }
+    },
+    "try again" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حاول مرة اخرى"
+          }
+        }
+      }
+    },
+    "Try Again" : {
+
+    },
+    "wrong answer" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجابة خاطئة"
+          }
+        }
+      }
+    },
+    "Wrong Answer" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجابة خاطئة"
+          }
+        }
+      }
+    },
+    "You finished the table" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انهيت الجدول كاملًا"
+          }
+        }
+      }
+    },
+    "you finished the whole table" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انهيت الجدول كاملًا"
+          }
+        }
+      }
+    },
+    "You finished the whole table" : {
+
+    },
+    "إجابة صحيحة" : {
+
+    },
+    "ابدا اللعب" : {
+
+    },
+    "اجابة خاطئة" : {
+
+    },
+    "اجابة صحيحة! " : {
+
+    },
+    "احسنت" : {
+
+    },
+    "انهيت الجدول كاملا" : {
+
+    },
+    "تحقق" : {
+
+    },
+    "تخطي" : {
+
+    },
+    "جدول ضرب اثنان" : {
+
+    },
+    "جدول ضرب واحد" : {
+
+    },
+    "حاول مرة اخرى" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حاول مرة اخرى"
+          }
+        }
+      }
+    },
+    "مسألة الضرب" : {
+
+    }
+  },
+  "version" : "1.0"
+}

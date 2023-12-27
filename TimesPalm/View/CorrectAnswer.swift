@@ -1,33 +1,3 @@
-//
-
-//  CorrectAnswer .swift
-
-//  TimesPalm
-
-//
-
-//  Created by Maha on 11/06/1445 AH.
-
-//
-
-
-
-//
-
-//  CorrectAnswer .swift
-
-//  TimesPalm
-
-//
-
-//  Created by Maha on 10/06/1445 AH.
-
-//
-
-
-
-
-//
 
 //  CustomPopup.swift
 
@@ -38,9 +8,6 @@
 //  Created by Maha on 10/06/1445 AH.
 
 //
-
-
-
 import SwiftUI
 
 
@@ -151,8 +118,8 @@ struct CorrectAnswer_: View {
                     checkAnswer(clickedDatesCount)
                     
                 }) {
-                    
-                    Text("تحقق")
+                    Text("Check")
+                    //Text("تحقق")
                     
                         .font(.system(size: 40))
                     
@@ -255,8 +222,8 @@ struct CorrectAnswer_: View {
                     VStack{
                     
                         
-                        
-                        Text("اجابة صحيحة! ")
+                        Text("Correct Answer")
+                       // Text("اجابة صحيحة! ")
                             .font(.system(size: 40))
                             .foregroundColor(.black)
                             .padding()
@@ -295,11 +262,12 @@ struct CorrectAnswer_: View {
             VStack {
                 Spacer()
                 
-                Text("إجابة خاطئة")
+                Text("Wrong Answer")
+                //Text("إجابة خاطئة")
                     .padding()
                     .font(.system(size: 40))
-                   
-                Text("حاول مرة اخرى")
+                   Text("Try Again")
+                //Text("حاول مرة اخرى")
                 
                     .font(.system(size: 40))
                     .foregroundColor(.black)
@@ -343,7 +311,8 @@ struct CorrectAnswer_: View {
         var duration: TimeInterval
         var body: some View {
             VStack{
-                Text("احسنت!")
+                Text("Good job!")
+                //Text("احسنت!")
                     .font(.title)
                     .foregroundColor(.black)
                     .padding(.vertical)
@@ -354,8 +323,8 @@ struct CorrectAnswer_: View {
                 
                     .scaleEffect(0.40)
                 
-                
-                Text("انهيت الجدول كاملا")
+                Text("You finished the whole table")
+                //Text("انهيت الجدول كاملا")
                     .font(.title)
                     .padding()
                 

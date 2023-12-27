@@ -69,8 +69,8 @@ struct OnboardingPageView: View {
 
                     
                 }
-                
-                Text("تحقق")
+                Text("Check")
+                //Text("تحقق")
                 .font(.system(size: 40))
                 .padding()
                 .frame(width: 150)
@@ -95,9 +95,9 @@ struct OnboardingView: View {
     @State var goToMapView = false
     
     let onboardingPages = [
-        OnboardingPage(palmImage: "Palmwithdates", description: "سؤال من جدول الضرب المراد حله",equation:" 2 x 2 = ?",correct: ""),
-        OnboardingPage(palmImage: "Palmwithdates3", description: "اجمع حبات التمر عبر الضغط عليها لحل المعادلة والتحقق من الجواب",equation:" 2 x 2 = 3",correct: ""),
-        OnboardingPage(palmImage: "Palmwithdates3", description: "ظهور الحل والإجابة الصحيحة بعد التحقق",equation:" 2 x 2 = 4",correct: "إجابة صحيحة!"),
+        OnboardingPage(palmImage: "Palmwithdates", description: "Question from the chosen table",equation:" 2 x 2 = ?",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates3", description:"Collect the dates by clicking on them and then checking your answer ",equation:" 2 x 2 = 3",correct: ""),
+        OnboardingPage(palmImage: "Palmwithdates3", description: "The correct answer appears after pressing check",equation:" 2 x 2 = 4",correct: "Correct answer"),
     ]
     
     
@@ -106,7 +106,7 @@ struct OnboardingView: View {
             ZStack{
                 VStack {
                     TabView(selection: $currentPage) {
-                        ForEach((0..<onboardingPages.count).reversed(), id: \.self) { index in
+                        ForEach((0..<onboardingPages.count), id: \.self) { index in
                             OnboardingPageView(onboardingPage: onboardingPages[index])
                                 .tag(index)
                             
@@ -135,7 +135,8 @@ struct OnboardingView: View {
                                                        currentPage += 1
                                                    }
                                                }) {
-                                                   Text("التالي")
+                                                   Text("Next")
+                                                   //Text("التالي")
                                                        .frame(width: 180, height: 50)
                                                        .foregroundColor(.white)
                                                        .font(.system(size: 30))
@@ -146,7 +147,8 @@ struct OnboardingView: View {
                                                }.padding(.horizontal,40)
                                            } else {
                                                NavigationLink(destination: MapView()){
-                                                   Text("ابدأ اللعب")
+                                                   Text("Start playing")
+                                                  // Text("ابدأ اللعب")
                                                        .frame(width: 180, height: 50)
                                                        .foregroundColor(.white)
                                                        .font(.system(size: 30))
@@ -167,7 +169,7 @@ struct OnboardingView: View {
                         Spacer()
                         
                             .accessibilityLabel( Text("ابدا اللعب"))
-                                .accessibilityHint(Text("start playing"))
+                                .accessibilityHint(Text("Start playing"))
                              
                         Button(action: {
                             withAnimation {
@@ -179,7 +181,8 @@ struct OnboardingView: View {
                             }
                         }) {
                             NavigationLink(destination: MapView()){
-                                Text("تخطي")
+                                Text("Skip")
+                                //Text("تخطي")
                                     .frame(width:180, height:50)
                                     .foregroundColor(.black)
                                     .font(.system(size:30))
